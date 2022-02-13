@@ -1,0 +1,248 @@
+{
+  "info": {
+    "_postman_id": "e21a2c57-0ffa-46d3-9ce5-9a9e96164979",
+    "name": "socialNetwork",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+
+  "item": [
+    {
+      "name": "getUsers",
+      "item": [
+        {
+          "name": "users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/api/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "users"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getUserById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/api/users/435",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "users", "435"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "postUser",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/api/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "users"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateUser",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/api/users/435",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "users", "435"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteUser",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/api/users/435",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "users", "435"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+
+    {
+      "name": "thoughts",
+      "item": [
+        {
+          "name": "getThoughts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/api/thoughts",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "thoughts"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getThoughtById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/api/thoughts/435",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "thoughts", "435"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "postThought",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/api/thoughts",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "thoughts"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateThought",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/api/thoughts/435",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "thoughts", "435"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteThought",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/api/thoughts/435",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "thoughts", "435"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+
+    {
+      "name": "reactions",
+      "item": [
+        {
+          "name": "updateReaction",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/api/thoughts/5/reactions",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "thoughts", "5", "reactions"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteReaction",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/api/thoughts/5/reactions/5",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "thoughts", "5", "reactions", "5"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "friends",
+      "item": [
+        {
+          "name": "getFriend",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/api/users/5/friends/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "users", "5", "friends", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "friend",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/api/users/5/friends/5",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": [
+                "api",
+                "users",
+                "62092963007d4fc88d793fef",
+                "friends",
+                "6209264984b15828297d2496"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

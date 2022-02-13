@@ -1,16 +1,31 @@
 const express = require("express");
-const db = require("./db/connection");
-const routes = require("./routers");
+const mongoose = require("mongoose");
 
-const PORT = process.env.port || 3003;
+const routes = require("./routes");
+
+const PORT = process.env.PORT || 4000;
+
 const app = express();
 
-app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 
-db.once("open", () => {
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-  });
-});
+const init = async () => {
+  try {
+    await mongoose.connect("mongodb://localhost:27017/studentStatsDb", {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+
+    console.log("[INFO]: Database connection successful");
+
+    app.listen(PORT, () =>
+      console.log(`Server running on http://localhost:${PORT}`)
+    );
+  } catch (error) {
+    console.log(`[ERROR]: Database connection failed | ${error.message}`);
+  }
+};
+
+init();
