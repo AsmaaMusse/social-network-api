@@ -1,6 +1,15 @@
 const { Router } = require("express");
 
+const {
+  getThoughts,
+  getThoughtsById,
+  createThought,
+  updateThought,
+  deleteThought,
+} = require("../../controller/api/thoughtsController");
+
 const reactions = require("./reactionsRouter");
+
 const router = Router();
 
 router.get("/", getThoughts);
