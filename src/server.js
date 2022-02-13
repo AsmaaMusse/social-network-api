@@ -13,7 +13,7 @@ app.use(routes);
 
 const init = async () => {
   try {
-    await mongoose.connect("mongodb://localhost:27017/studentStatsDb", {
+    await mongoose.connect("mongodb://localhost:27017/socialNetworkDb", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
