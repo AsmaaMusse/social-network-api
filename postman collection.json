@@ -1,248 +1,172 @@
 {
   "info": {
     "_postman_id": "21210b3c-22f5-4650-9bca-72305f9f008c",
-    "name": "socialNetwork",
-    "schema": "https://www.getpostman.com/collections/08592cb4053a88d0908d"
+    "name": "social network",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
-
   "item": [
     {
-      "name": "getUsers",
+      "name": "Users",
       "item": [
         {
-          "name": "users",
+          "name": "Users",
+          "id": "577c3528-1d12-43be-851c-be69fe702549",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
           "request": {
             "method": "GET",
             "header": [],
-            "url": {
-              "raw": "http://localhost:4000/api/users",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "4000",
-              "path": ["api", "users"]
-            }
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": "http://localhost:4000/api/users"
           },
           "response": []
         },
+
         {
-          "name": "getUserById",
+          "name": "UserById",
+          "id": "77c6555d-45b3-4e7a-ac3a-399c7f5cec97",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
           "request": {
             "method": "GET",
             "header": [],
-            "url": {
-              "raw": "http://localhost:4000/api/users/435",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "4000",
-              "path": ["api", "users", "435"]
-            }
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": "http://localhost:4000/api/users/620acbe874d263e03752df6f"
           },
           "response": []
         },
+
         {
-          "name": "postUser",
+          "name": "Users",
+          "id": "237042fb-9dd3-49cc-9daf-72d436c75a51",
           "request": {
             "method": "POST",
             "header": [],
-            "url": {
-              "raw": "http://localhost:4000/api/users",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "4000",
-              "path": ["api", "users"]
-            }
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"_id\": \"620acbe874d263e03752df6f\",\r\n    \"username\": \"newUser\",\r\n    \"email\": \"newUser@gmail.com\",\r\n    \"thoughts\": [],\r\n    \"friends\": [],\r\n    \"__v\": 0\r\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": "http://localhost:4000/api/users/"
           },
           "response": []
         },
+
         {
-          "name": "updateUser",
+          "name": "Users",
+          "id": "777a85f4-39b2-4ee7-b78b-881d6f2afff5",
           "request": {
             "method": "PUT",
             "header": [],
-            "url": {
-              "raw": "http://localhost:4000/api/users/435",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "4000",
-              "path": ["api", "users", "435"]
-            }
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"_id\": \"620acbe874d263e03752df6f\",\r\n    \"username\": \"newUser123\",\r\n    \"email\": \"newUser@gmail.com\",\r\n    \"thoughts\": [],\r\n    \"friends\": [],\r\n    \"__v\": 0\r\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": "http://localhost:4000/api/users/620acbe874d263e03752df6f"
           },
           "response": []
         },
+
         {
-          "name": "deleteUser",
+          "name": "Users",
+          "id": "c63be9e8-5194-40a8-a482-360d77e9af20",
           "request": {
             "method": "DELETE",
             "header": [],
-            "url": {
-              "raw": "http://localhost:4000/api/users/435",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "4000",
-              "path": ["api", "users", "435"]
-            }
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": "http://localhost:4000/api/users/620acbe874d263e03752df6f"
           },
           "response": []
         }
-      ]
+      ],
+      "id": "3e359bd7-7dc7-499a-a62c-f34276203184"
     },
 
     {
-      "name": "thoughts",
+      "name": "Thoughts",
       "item": [
         {
-          "name": "getThoughts",
+          "name": "Thought",
+          "id": "41240572-fee6-4d88-b2a6-1e1c27d916f2",
           "request": {
             "method": "GET",
             "header": [],
-            "url": {
-              "raw": "http://localhost:4000/api/thoughts",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "4000",
-              "path": ["api", "thoughts"]
-            }
+            "url": "http://localhost:4000/api/thoughts"
           },
           "response": []
         },
+
         {
-          "name": "getThoughtById",
+          "name": "ThoughtById",
+          "id": "39f89887-7243-406b-b12d-71b9cd2f9efc",
           "request": {
             "method": "GET",
             "header": [],
-            "url": {
-              "raw": "http://localhost:4000/api/thoughts/435",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "4000",
-              "path": ["api", "thoughts", "435"]
-            }
+            "url": "http://localhost:4000/api/thoughts/6209c2430909f2e2e2d55622"
           },
           "response": []
         },
+
         {
-          "name": "postThought",
+          "name": "Thought",
+          "id": "292817ed-2ddc-4963-b92a-967509c4af5d",
           "request": {
             "method": "POST",
             "header": [],
-            "url": {
-              "raw": "http://localhost:4000/api/thoughts",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "4000",
-              "path": ["api", "thoughts"]
-            }
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"thoughtText\": \"newThought\",\r\n    \"createdAt\": \"2022-02-14T02:45:23.240Z\",\r\n    \"username\": \"newUser\",\r\n    \"reactions\": [],\r\n    \"__v\": 0\r\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": "http://localhost:4000/api/thoughts/"
           },
           "response": []
         },
+
         {
-          "name": "updateThought",
+          "name": "Thought",
+          "id": "27f10885-9ae5-499f-8e72-29cabbfd5b72",
           "request": {
             "method": "PUT",
             "header": [],
-            "url": {
-              "raw": "http://localhost:4000/api/thoughts/435",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "4000",
-              "path": ["api", "thoughts", "435"]
-            }
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"thoughtText\": \"newThought123\",\r\n    \"createdAt\": \"2022-02-14T02:45:23.240Z\",\r\n    \"username\": \"newUser\",\r\n    \"reactions\": [],\r\n    \"__v\": 0\r\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": "http://localhost:4000/api/thoughts/620ad562e90fa575cffa954c"
           },
           "response": []
         },
-        {
-          "name": "deleteThought",
-          "request": {
-            "method": "DELETE",
-            "header": [],
-            "url": {
-              "raw": "http://localhost:4000/api/thoughts/435",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "4000",
-              "path": ["api", "thoughts", "435"]
-            }
-          },
-          "response": []
-        }
-      ]
-    },
 
-    {
-      "name": "reactions",
-      "item": [
         {
-          "name": "updateReaction",
-          "request": {
-            "method": "POST",
-            "header": [],
-            "url": {
-              "raw": "http://localhost:4000/api/thoughts/5/reactions",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "4000",
-              "path": ["api", "thoughts", "5", "reactions"]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "deleteReaction",
+          "name": "Thought",
+          "id": "869e7d77-4368-4bc0-a375-8b34b5494cc0",
           "request": {
             "method": "DELETE",
             "header": [],
-            "url": {
-              "raw": "http://localhost:4000/api/thoughts/5/reactions/5",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "4000",
-              "path": ["api", "thoughts", "5", "reactions", "5"]
-            }
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": "http://localhost:4000/api/thoughts/620ad562e90fa575cffa954c"
           },
           "response": []
         }
-      ]
-    },
-    {
-      "name": "friends",
-      "item": [
-        {
-          "name": "getFriend",
-          "request": {
-            "method": "POST",
-            "header": [],
-            "url": {
-              "raw": "http://localhost:4000/api/users/5/friends/",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "4000",
-              "path": ["api", "users", "5", "friends", ""]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "friend",
-          "request": {
-            "method": "DELETE",
-            "header": [],
-            "url": {
-              "raw": "http://localhost:4000/api/users/5/friends/5",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "4000",
-              "path": [
-                "api",
-                "users",
-                "62092963007d4fc88d793fef",
-                "friends",
-                "6209264984b15828297d2496"
-              ]
-            }
-          },
-          "response": []
-        }
-      ]
+      ],
+      "id": "4ec71cef-9776-4b4f-8354-581c9f0e2154"
     }
   ]
 }
