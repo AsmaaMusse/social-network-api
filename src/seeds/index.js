@@ -4,6 +4,7 @@ const { User, Thought } = require("../models");
 
 const users = require("./data/users");
 const thoughts = require("./data/thoughts");
+const { findById, findByIdAndUpdate } = require("../models/Thought");
 
 const init = async () => {
   try {
@@ -12,10 +13,6 @@ const init = async () => {
       useUnifiedTopology: true,
     });
     console.log("[INFO]: Successfully connected to Database");
-
-    await User.deleteMany({});
-    await User.insertMany(users);
-    console.log("[INFO]: Successfully seeded users");
 
     await Thought.deleteMany({});
     await Thought.insertMany(thoughts);
@@ -36,7 +33,33 @@ const init = async () => {
 
       console.log("[INFO]: Successfully seeded Users with Thoughts");
     });
-  } catch (error) {}
+
+    await Thought.deleteMany({});
+    await Thought.insertMany(users);
+    console.log("[INFO]: Successfully seeded users");
+
+    const friendPromises = newUsers.map(async (user) => {
+      const userName = user.userName;
+      const allUsers = newUsers.filter(
+        (currentUser) => currentUser.userName != userName
+      );
+
+      const randomFriend =
+        allUsers[Math.floor(Math.random() * allUsers.length)];
+
+      user.friends.push(randomFriend._id);
+
+      await User, findByIdAndUpdate(user._id, { ...user });
+    });
+
+    await Promise.all(friendPromises);
+
+    console.log("[INFO]: Successfully users with friends");
+
+    await mongoose.disconnect();
+  } catch (error) {
+    console.log(`[ERROR]: Database connection failed | ${error.message}`);
+  }
 };
 
 init();
