@@ -2,45 +2,35 @@ const { User } = require("../../models");
 
 const createFriend = async (req, res) => {
   try {
-    const { UserId } = req.params;
-    const data = await User.findByIdAndUpdate(
-      UserId,
-      {
-        $push: { friends: req.body._id },
-      },
-      { new: true }
-    ).populate("friends");
+    const { id } = req.params;
+    const { userId } = req.body;
 
-    return res.json({ success: true, data });
+    const user = await User.findByIdAndUpdate(id, {
+      $push: { friends: userId },
+    });
+
+    return res.json({ success: true, data: user });
   } catch (error) {
-    console.log(
-      `[ERROR]: Failed to create a friend for User | ${error.message}`
-    );
+    console.log(`[ERROR]: Failed to create friend for user | ${error.message}`);
     return res
       .status(500)
-      .json({ success: false, Error: "Failed to create friend" });
+      .json({ success: false, error: "Failed to create friend for user" });
   }
 };
-
 const deleteFriend = async (req, res) => {
   try {
-    const { userId, friendId } = req.params;
-    const data = await User.findByIdAndUpdate(
-      userId,
-      {
-        $pull: { friends: { $in: [friendId] } },
-      },
-      {
-        new: true,
-      }
-    );
+    const { friendId, id } = req.params;
 
-    return res.json({ success: true, data });
+    const user = await User.findByIdAndUpdate(id, {
+      $pull: { friends: friendId },
+    });
+
+    return res.json({ success: true, data: user });
   } catch (error) {
     console.log(`[ERROR]: Failed to delete friend | ${error.message}`);
     return res
       .status(500)
-      .json({ success: false, Error: "Failed to delete friend" });
+      .json({ success: false, error: "Failed to delete friend" });
   }
 };
 
