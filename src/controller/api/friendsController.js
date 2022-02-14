@@ -13,7 +13,9 @@ const createFriend = async (req, res) => {
 
     return res.json({ success: true, data });
   } catch (error) {
-    console.log(`[ERROR]: Failed to create a friend for User`);
+    console.log(
+      `[ERROR]: Failed to create a friend for User | ${error.message}`
+    );
     return res
       .status(500)
       .json({ success: false, Error: "Failed to create friend" });
@@ -32,9 +34,10 @@ const deleteFriend = async (req, res) => {
         new: true,
       }
     );
+
     return res.json({ success: true, data });
   } catch (error) {
-    console.log(`[ERROR]: Failed to delete friend`);
+    console.log(`[ERROR]: Failed to delete friend | ${error.message}`);
     return res
       .status(500)
       .json({ success: false, Error: "Failed to delete friend" });
