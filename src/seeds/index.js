@@ -4,7 +4,6 @@ const { User, Thought } = require("../models");
 
 const users = require("./data/users");
 const thoughts = require("./data/thoughts");
-const { findById, findByIdAndUpdate } = require("../models/Thought");
 
 const init = async () => {
   try {
@@ -12,6 +11,7 @@ const init = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
+
     console.log("[INFO]: Successfully connected to Database");
 
     await Thought.deleteMany({});
@@ -34,14 +34,14 @@ const init = async () => {
       console.log("[INFO]: Successfully seeded Users with Thoughts");
     });
 
-    await Thought.deleteMany({});
-    await Thought.insertMany(users);
+    await User.deleteMany({});
+    const newUsers = await User.insertMany(users);
     console.log("[INFO]: Successfully seeded users");
 
     const friendPromises = newUsers.map(async (user) => {
-      const userName = user.userName;
+      const username = user.username;
       const allUsers = newUsers.filter(
-        (currentUser) => currentUser.userName != userName
+        (currentUser) => currentUser.username != username
       );
 
       const randomFriend =
@@ -49,7 +49,7 @@ const init = async () => {
 
       user.friends.push(randomFriend._id);
 
-      await User, findByIdAndUpdate(user._id, { ...user });
+      await User.findByIdAndUpdate(user._id, { ...user });
     });
 
     await Promise.all(friendPromises);
