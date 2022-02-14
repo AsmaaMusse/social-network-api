@@ -15,8 +15,8 @@ const getUsers = async (req, res) => {
 
 const getUsersById = async (req, res) => {
   try {
-    const { UserId } = req.params;
-    const users = await User.findById(UserId).populate("friends");
+    const { id } = req.params;
+    const users = await User.findById(id).populate("friends");
 
     return res.json({ success: true, data: users });
   } catch (error) {
@@ -43,9 +43,9 @@ const createUser = async (req, res) => {
 
 const updateUser = async (req, res) => {
   try {
-    const { userId } = req.params;
+    const { id } = req.params;
     const users = await User.findByIdAndUpdate(
-      userId,
+      id,
       {
         ...req.body,
       },
@@ -65,8 +65,8 @@ const updateUser = async (req, res) => {
 
 const deleteUser = async (req, res) => {
   try {
-    const { userId } = req.params;
-    const users = await User.findByIdAndDelete(userId);
+    const { id } = req.params;
+    const users = await User.findByIdAndDelete(id);
 
     return res.json({ success: true, data: users });
   } catch (error) {

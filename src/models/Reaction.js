@@ -1,4 +1,4 @@
-const { Schema, SchemaTypes } = require("mongoose");
+const { Schema } = require("mongoose");
 
 const moment = require("moment");
 

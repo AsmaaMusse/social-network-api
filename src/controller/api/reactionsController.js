@@ -2,9 +2,9 @@ const { Thought } = require("../../models");
 
 const createReaction = async (req, res) => {
   try {
-    const { thoughtId } = req.params;
+    const { id } = req.params;
     const data = await Thought.findByIdAndUpdate(
-      thoughtId,
+      id,
       {
         $push: { reactions: { ...req.body } },
       },
@@ -24,9 +24,9 @@ const createReaction = async (req, res) => {
 
 const deleteReaction = async (req, res) => {
   try {
-    const { thoughtId, reactionId } = req.params;
+    const { id, reactionId } = req.params;
     const data = await Thought.findByIdAndUpdate(
-      thoughtId,
+      id,
       {
         $push: { reactions: { _id: reactionId } },
       },

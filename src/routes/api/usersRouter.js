@@ -18,6 +18,6 @@ router.post("/", createUser);
 router.put("/:id", updateUser);
 router.delete("/:id", deleteUser);
 
-router.use("/:userId/friends", friends);
+router.use("/:id/friends", friends);
 
 module.exports = router;

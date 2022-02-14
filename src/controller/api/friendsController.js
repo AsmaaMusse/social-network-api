@@ -17,6 +17,7 @@ const createFriend = async (req, res) => {
       .json({ success: false, error: "Failed to create friend for user" });
   }
 };
+
 const deleteFriend = async (req, res) => {
   try {
     const { friendId, id } = req.params;
